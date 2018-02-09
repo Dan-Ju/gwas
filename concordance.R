@@ -1,6 +1,6 @@
 # #################################################
 ## PROJECT: GWAS trans-ethnic reproducibility
-## OBJECTIVE: Measure concordance between European GWAS associations and African 
+## OBJECTIVE: Genome-wide coincidence in effect direction 
 ## DATE: 1.15.2017
 ## AUTHOR: Dan Ju
 # #################################################
@@ -13,6 +13,7 @@
 #   p-value thresholds for African and European summary statistics.
 # ~ Outputs a table with proportions of loci that have same direction and 
 #   p-values from one-sided sign test. 
+# ~ Samples SNPs along genome a certain minimum distance
 # -----------------------------
 
 ## Libraries, paths, args, etc.
