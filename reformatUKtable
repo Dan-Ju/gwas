@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 23 13:25:47 2018
+
+@author: Dan Ju
+"""
+# Reformats UK biobank GWAS results table for further analysis
+
+import pandas as pd
+import getopt
+import sys
+#import pdb
+import numpy as np
+
+df = pd.read_table(import_path)
+snp_loc = df['variant'].apply(lambda x: pd.Series(x.split(':')))
+output_df = pd.DataFrame(np.nan, index=range(0,len(df)), 
+                         columns=['Chr','SNP','bp','A1','A2','Freq','b',
+                                  'se','p'])
+
+output_df['Chr'] = 

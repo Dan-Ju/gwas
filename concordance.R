@@ -21,10 +21,14 @@
 checkConcordance.path <- "/Users/rotation/OneDrive/Tishkoff/scripts/checkConcordance.R"
 source(checkConcordance.path)
 
-args = commandArgs(trailingOnly = TRUE) 
+# args = commandArgs(trailingOnly = TRUE) 
+args <- c("/Users/rotation/downloads/afr_summary_stats/1.mlma",
+          "/Users/rotation/Downloads/euro_summary_stats/ukbio_height_chrpos.tsv",
+          "/Users/rotation/Desktop/uk_afr_genomewide_concordance.tsv")
 # Arg1 is path to African GWAS summary stats
 # Arg2 is path to European GWAS summary stats
 # Arg3 is path for exporting output table
+
 eur.path <- args[2]
 afr.path <- args[1]
 export.path <- args[3]
@@ -41,7 +45,9 @@ colnames(afr.df)[which(colnames(afr.df) %in% c("p","se","b","A1"))] <-
 colnames(eur.df)[which(colnames(eur.df) %in% c("p","SE","b","Allele1"))] <- 
   c("eur_eff_allele","b_eur","SE_eur","p_eur")
 merged.df <- merge(eur.df, afr.df, by = "SNP")
-
+# free up RAM
+rm(afr.df, eur.df)
+gc()
 ## SNP curation
 # -----------------------------
 # SNPs that meet a p-value condition in either the African/European datasets are 
@@ -84,11 +90,11 @@ merged.df$p_cat_fin[afr.low] <- merged.df$p_cat_afr[afr.low]
 merged.df$p_cat_fin[eur.low] <- merged.df$p_cat_eur[eur.low]
 
 # pick SNPs separated by minimum distance
-min.dist <- 1e5
+min.dist <- 1e6
 merged.df$concord_group <- 0
 for (i in 1:6) {
-  for (j in 1:23) {
-    index <- which(merged.df$p_cat_fin==i & merged.df$chr_name==j)
+  for (j in 1:22) {
+    index <- which(merged.df$p_cat_fin==i & merged.df$Chr==j)
     merged.df$concord_group[index] <- i 
     temp.df <- merged.df[merged.df$concord_group==i, c("bp","SNP")]
     temp.df$dist[2:length(temp.df$bp)] <- diff(temp.df$bp)

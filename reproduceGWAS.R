@@ -16,7 +16,6 @@
 # -----------------------------
 checkConcordance.path <- "/Users/rotation/OneDrive/Tishkoff/scripts/checkConcordance.R"
 source(checkConcordance.path)
-library(parallel)
 
 args = commandArgs(trailingOnly = TRUE) 
 args = c('/Users/rotation/downloads/euro_summary_stats/ukbio_height_chrpos.tsv',
