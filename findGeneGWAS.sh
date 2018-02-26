@@ -3,9 +3,9 @@
 #Use editBedPos.sh to alter window size of genes
 
 TRAIT=height
-DIR=/Users/rotation/downloads/euro_summary_stats/height
-GWAS_FILE=$DIR/ukbio_height_chrpos.tsv
-GENE_FILE=/Users/rotation/downloads/all-genes/genes_RefSeq_200kb.bed
+DIR=/Users/rotation/downloads/afr_summary_stats/run4/height
+GWAS_FILE=$DIR/1.mlma
+GENE_FILE=/Users/rotation/downloads/all-genes/genes_RefSeq_200000kb.bed
 QUANTILE=0.01
 #getTopHits.py needed
 PYTHON_SCRIPT_LOC=/Users/rotation/OneDrive/Tishkoff/scripts

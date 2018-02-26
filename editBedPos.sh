@@ -10,5 +10,5 @@ cd $DIR
 WIND=$((WIND_SIZE / 2))
 
 echo | awk -v size=$WIND '{ print $1,$2-size,$3+size,$4 }' $GENE_FILENAME | \
-awk -v OFS='\t' '{ if ($2 < 0) print $1,$2,$3,$4; else print $1,$2,$3,$4 }' \
+awk -v OFS='\t' '{ if ($2 < 0) print $1,0,$3,$4; else print $1,$2,$3,$4 }' \
 > genes_RefSeq_${WIND_SIZE}kb.bed
