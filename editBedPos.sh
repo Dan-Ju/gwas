@@ -4,7 +4,7 @@
 
 DIR=/Users/rotation/downloads/all-genes #where gene.bed file is
 GENE_FILENAME=genes_RefSeq.bed
-WIND_SIZE=200000 #total window size
+WIND_SIZE=0 #total window size
 
 cd $DIR
 WIND=$((WIND_SIZE / 2))
