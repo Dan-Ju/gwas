@@ -7,14 +7,14 @@
 
 DIR=/Users/rotation/downloads
 
-# RSCRIPT=/Users/rotation/OneDrive/Tishkoff/scripts/geneEnrichment.R
-RSCRIPT=/Users/rotation/OneDrive/Tishkoff/scripts/closestGeneEnrichment.R
-FILE=/Users/rotation/desktop/workspace/closest_gene_list.txt
-AFR_DIR=$DIR/afr_summary_stats/closest_gene
-EUR_DIR=$DIR/euro_summary_stats/closest_gene
-OUTPUT=gene_enrich_stats_closest_gene
+RSCRIPT=/Users/rotation/OneDrive/Tishkoff/scripts/geneEnrichment.R
+# RSCRIPT=/Users/rotation/OneDrive/Tishkoff/scripts/closestGeneEnrichment.R
+FILE=/Users/rotation/desktop/workspace/gene_enrichment_list.txt
+AFR_DIR=$DIR/afr_summary_stats/gene_enrichment_50kb
+EUR_DIR=$DIR/euro_summary_stats/gene_enrichment_.01quant/gene_enrichment_50kb
+OUTPUT=gene_enrich_stats_50kb
 
-cd $DIR
+cd $DIR/geneEnrichment/ukquant_afrquant/
 touch $OUTPUT
 
 while read -r a b

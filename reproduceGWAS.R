@@ -55,7 +55,7 @@ output.df$p_eur <- gwas.hits$p
 output.df$beta_eur <- gwas.hits$b
 output.df$eur_eff_allele <- gwas.hits$Allele1
 
-# vectors
+# vectorize
 k.vec <- numeric(rows)
 afr.pos.vec <- numeric(rows)
 afr.al.vec <- character(rows)
