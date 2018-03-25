@@ -30,7 +30,7 @@ def main(argv):
     
     output_df = df.loc[df.p <= float(cutoff), ]
     
-    output_df.to_csv(export_path, sep="\t")
+    output_df.to_csv(export_path, sep="\t", index=False)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
